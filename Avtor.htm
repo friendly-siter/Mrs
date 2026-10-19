@@ -7,6 +7,15 @@
 <body bgcolor="#EAF4FF">
   <h1 align="center">Автор туралы</h1>
 
+  <p align="center">
+    <img id="avatar" alt="Мұнда таңдалған фото шығады" width="180" height="180">
+  </p>
+  <p align="center">
+    <b>Галереядан фото таңдау:</b><br>
+    <input type="file" accept="image/*" onchange="showPhoto(event)">
+  </p>
+  <marquee behavior="alternate" scrollamount="6">Мурат Мирас Русланұлы · АРХ-26</marquee>
+
   <p><b>Аты-жөні:</b> Мурат Мирас Русланұлы</p>
   <p><b>Тобы:</b> АРХ-26</p>
   <p><b>Қаласы:</b> Қарағанды</p>
@@ -17,5 +26,14 @@
   </p>
 
   <p><a href="lab.htm">Басты бетке оралу</a></p>
+
+  <script>
+    function showPhoto(event) {
+      var file = event.target.files[0];
+      if (file) {
+        document.getElementById('avatar').src = URL.createObjectURL(file);
+      }
+    }
+  </script>
 </body>
 </html>
